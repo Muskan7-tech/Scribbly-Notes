@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Scribbly Notes — a little space to think</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/pdf.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Scribbly Notes home">
+        <span class="brand-mark" aria-hidden="true">✎</span>
+        <span>Scribbly<span class="brand-light"> Notes</span></span>
+      </a>
+      <span class="offline-label"><span class="status-dot" aria-hidden="true"></span>Offline &amp; just for you</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR LITTLE NOTEBOOK</p>
+      <h1 id="page-title">A little space to <span>think.</span></h1>
+      <p class="intro-copy">Put your thoughts on paper. They’ll show up in your notebook as you write.</p>
+    </section>
+
+    <section class="workspace" aria-label="Note editor and live preview">
+      <div class="editor-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">01 / YOUR THOUGHTS</p>
+            <h2>Write a note</h2>
+          </div>
+          <span class="edit-icon" aria-hidden="true">⌁</span>
+        </div>
+        <label class="visually-hidden" for="note-input">Your note</label>
+        <textarea id="note-input" placeholder="Start wherever you are…&#10;&#10;A thought, a list, a tiny reminder — it all belongs here." spellcheck="true"></textarea>
+        <div class="editor-footer">
+          <span class="typing-hint"><span aria-hidden="true">↳</span> Your words stay on this device</span>
+          <span id="character-count" aria-live="polite">0 characters</span>
+        </div>
+      </div>
+
+      <div class="preview-panel">
+        <div class="panel-heading preview-heading">
+          <div>
+            <p class="panel-kicker">02 / THE LIVE PREVIEW</p>
+            <h2>Your page</h2>
+          </div>
+          <span class="live-badge"><span class="status-dot" aria-hidden="true"></span>LIVE</span>
+        </div>
+        <div class="page-tools" aria-label="Notebook page controls">
+          <div class="page-nav">
+            <button id="previous-page" class="icon-button" type="button" aria-label="Previous page" title="Previous page">←</button>
+            <span id="page-indicator" aria-live="polite">Page 1 of 1</span>
+            <button id="next-page" class="icon-button" type="button" aria-label="Next page" title="Next page">→</button>
+          </div>
+          <div class="paper-tools">
+            <div class="line-toggle" role="group" aria-label="Paper lines">
+              <button id="ruled-button" class="choice-button is-selected" type="button" aria-pressed="true">Ruled</button>
+              <button id="unruled-button" class="choice-button" type="button" aria-pressed="false">Unruled</button>
+            </div>
+            <button id="export-button" class="export-button" type="button"><span aria-hidden="true">↓</span> Export PNG</button>
+          </div>
+        </div>
+        <article class="notebook" aria-label="Notebook preview">
+          <div class="notebook-margin" aria-hidden="true"></div>
+          <p id="note-preview" class="note-preview" aria-live="polite" aria-label="Live note preview"></p>
+        </article>
+        <p id="preview-caption" class="preview-caption"><span aria-hidden="true">✦</span> 24 ruled lines per page. Your note continues onto the next page.</p>
+      </div>
+    </section>
+
+    <section class="import-panel" aria-labelledby="import-title">
+      <div>
+        <p class="panel-kicker">OPTIONAL</p>
+        <h2 id="import-title">Turn a PDF into a note</h2>
+        <p class="import-copy">Choose a text-based PDF to bring its text into your notebook. Scanned pages need OCR.</p>
+      </div>
+      <label class="file-button" for="pdf-input">Choose PDF</label>
+      <input id="pdf-input" class="visually-hidden" type="file" accept="application/pdf,.pdf" aria-label="Choose a PDF to convert">
+      <p id="pdf-status" class="pdf-status" aria-live="polite">Your PDF is read locally on this device.</p>
+    </section>
+
+    <footer class="page-footer"><span>Made for the in-between thoughts.</span><span class="footer-sparkle" aria-hidden="true">✳</span></footer>
+  </main>
+</body>
+</html>
